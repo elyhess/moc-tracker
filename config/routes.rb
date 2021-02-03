@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post 'sign_in', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
+  post '/search_senate_members', to: 'propublica#search'
 end

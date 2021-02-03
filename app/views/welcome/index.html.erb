@@ -1,3 +1,16 @@
 <div class="d-flex align-items-center justify-content-center">
   <h1>Members of Congress Tracker</h1>
 </div>
+
+<%= form_with url: search_senate_members_path, local: true do |form| %>
+
+  <div class="pt-3 mb-3 text-center">
+    <%= form.label :search, 'Search For Senators By Last Name:', class: 'text-center' %>
+    <%= form.text_field :search, class: "form-control" %>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.submit 'Search', class: "btn btn-primary btn-block"%>
+  </div>
+
+<% end %>
