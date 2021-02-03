@@ -7,14 +7,14 @@ RSpec.describe 'User login' do
 
             visit root_path
 
-            click_link 'I have an account'
+            click_link 'Sign In'
 
-            expect(current_path).to eq(login_path)
+            expect(current_path).to eq(sign_in_path)
 
-            fill_in :email, with: user.email.upcase
+            fill_in :email, with: user.email
             fill_in :password, with: user.password
 
-            click_button 'Log In'
+            click_button 'Sign In'
 
             expect(current_path).to eq(root_path)
             expect(page).to have_content("Welcome, #{user.email}")
@@ -27,16 +27,15 @@ RSpec.describe 'User login' do
 
             visit root_path
 
-            click_link 'I have an account'
+            click_link 'Sign In'
 
-            expect(current_path).to eq(login_path)
+            expect(current_path).to eq(sign_in_path)
 
             fill_in :email, with: user.email
             fill_in :password, with: 'bad password'
 
-            click_button 'Log In'
+            click_button 'Sign In'
 
-            expect(current_path).to eq(login_path)
             expect(page).to have_content("Your credentials are bad, and you should feel bad")
         end
     end

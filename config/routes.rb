@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :create]
 
-  get '/login', to: 'users#login_form'
-  post '/login', to: 'users#login'
+  get 'sign_in', to: 'sessions#new'
+  post 'sign_in', to: 'sessions#create'
+
+  delete 'logout', to: 'sessions#destroy'
 end
