@@ -1,0 +1,3 @@
+class PropublicaController
+
+end
